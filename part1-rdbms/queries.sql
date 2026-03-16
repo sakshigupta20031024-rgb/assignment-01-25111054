@@ -27,3 +27,21 @@ FROM sales_reps s
 LEFT JOIN orders o ON s.sales_rep_id = o.sales_rep_id
 GROUP BY s.sales_rep_name;
 
+-- Q4: Find all orders where the total value exceeds 10000
+SELECT 
+    o.order_id,
+    SUM(p.unit_price * oi.quantity) AS total_value
+FROM orders o
+JOIN order_items oi ON o.order_id = oi.order_id
+JOIN products p ON oi.product_id = p.product_id
+GROUP BY o.order_id
+HAVING total_value > 10000
+ORDER BY total_value DESC;
+
+-- Q5: Identify products that have never been ordered
+SELECT 
+    p.product_name
+FROM products p
+LEFT JOIN order_items oi 
+ON p.product_id = oi.product_id
+WHERE oi.product_id IS NULL;
