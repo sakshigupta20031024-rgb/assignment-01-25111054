@@ -1,3 +1,4 @@
+## Vector DB Use Case
 A traditional keyword-based search would not be sufficient for a law firm handling large contracts because it relies on exact word matching. 
 Legal documents often use complex language, synonyms, and varied phrasing, which means important clauses may be missed if exact keywords are not used. 
 For example, a query about "termination clauses" might not match sections labeled differently, such as "contract ending conditions."
